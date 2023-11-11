@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+
+import React from 'react';
 import './App.css';
-
+// Componentes de las páginas
+import Encuestas from '../src/components/Encuestas';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Estado para rastrear las encuestas
+const encuestas = [
+{ id: 1, pregunta: '¿Cuál es tu color favorito?', opciones:
+['Rojo', 'Azul', 'Verde'] },
+{ id: 2, pregunta: '¿Cuál es tu comida favorita?', opciones:
+['Pizza', 'Hamburguesa', 'Sushi'] },
+];
+return (
+<div className="App">
+<h1>Aplicación de Encuestas</h1>
+{/* Contenido de las páginas */}
+<Encuestas encuestas={encuestas} />
+</div>
+);
 }
-
 export default App;
